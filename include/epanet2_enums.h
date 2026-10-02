@@ -359,7 +359,10 @@ typedef enum {
   EN_DEMANDPATTERN  = 23, //!< Name of default demand pattern
   EN_EMITBACKFLOW   = 24, //!< `EN_TRUE` (= 1) if emitters can backflow, `EN_FALSE` (= 0) if not
   EN_PRESS_UNITS    = 25, //!< Pressure units (see @ref EN_PressUnits)
-  EN_STATUS_REPORT  = 26  //!< Type of status report to produce (see @ref EN_StatusReport)
+  EN_STATUS_REPORT  = 26, //!< Type of status report to produce (see @ref EN_StatusReport)
+  EN_HTOL           = 27, //!< Hydraulic head tolerance (`[OPTIONS]` `HTOL`), unscaled
+  EN_QTOL           = 28, //!< Flow rate tolerance (`[OPTIONS]` `QTOL`), unscaled
+  EN_RQTOL          = 29  //!< Flow resistance tolerance (`[OPTIONS]` `RQTOL`), unscaled
 } EN_Option;
 
 /// Simple control types

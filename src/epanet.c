@@ -1285,6 +1285,15 @@ int DLLEXPORT EN_getoption(EN_Project p, int option, double *value)
     case EN_DAMPLIMIT:
         v = hyd->DampLimit;
         break;
+    case EN_HTOL:
+        v = hyd->Htol;
+        break;
+    case EN_QTOL:
+        v = hyd->Qtol;
+        break;
+    case EN_RQTOL:
+        v = hyd->RQtol;
+        break;
     case EN_SP_DIFFUS:
         v = qual->Diffus / DIFFUS;
         break;
@@ -1453,6 +1462,22 @@ int DLLEXPORT EN_setoption(EN_Project p, int option, double value)
 
     case EN_DAMPLIMIT:
         hyd->DampLimit = value;
+        break;
+
+    case EN_HTOL:
+        if (value <= 0.0) return 213;
+        hyd->Htol = value;
+        break;
+
+    case EN_QTOL:
+        if (value <= 0.0) return 213;
+        hyd->Qtol = value;
+        break;
+
+    case EN_RQTOL:
+        if (value <= 0.0) return 213;
+        if (value >= 1.0) return 213;
+        hyd->RQtol = value;
         break;
 
     case EN_SP_DIFFUS:
